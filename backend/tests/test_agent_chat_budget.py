@@ -36,6 +36,8 @@ class ChatBudgetTests(unittest.TestCase):
         self.assertEqual(result['answer'], '视频未提供日活数据。')
         self.assertEqual(execute.call_count, 3)
         self.assertEqual(create.call_count, 4)
+        for call in create.call_args_list:
+            self.assertNotIn('temperature', call.kwargs)
         final = create.call_args.kwargs
         self.assertEqual(final['tool_choice'], 'none')
         self.assertTrue(final['tools'])
@@ -54,6 +56,7 @@ class ChatBudgetTests(unittest.TestCase):
         result, create, execute = self.invoke([self.response('视频未提供。')])
         self.assertEqual(result['answer'], '视频未提供。')
         self.assertEqual(create.call_count, 1)
+        self.assertNotIn('temperature', create.call_args.kwargs)
         execute.assert_not_called()
 
 
