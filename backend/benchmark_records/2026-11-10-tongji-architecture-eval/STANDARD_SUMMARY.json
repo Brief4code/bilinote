@@ -1,0 +1,891 @@
+{
+  "scope": {
+    "budget_id": "standard",
+    "videos": 5,
+    "questions": 40,
+    "architectures": 4,
+    "answer_records": 160,
+    "repeats": 1
+  },
+  "generated_at": "2026-11-10T21:06:40.204275+08:00",
+  "model": "DeepSeek-V4.1-Flash",
+  "api_base_url": "https://agi.tongji.edu.cn/v1",
+  "judge_relationship": "same_model_self_evaluation",
+  "limits_per_question": {
+    "total_tokens": 65536,
+    "output_tokens": 8192,
+    "per_call_tokens": 4096,
+    "model_calls": 4,
+    "tool_calls": 9,
+    "tool_rounds": 3,
+    "seconds": 180
+  },
+  "results_by_architecture": {
+    "agent_only": {
+      "total": 40,
+      "passed": 40,
+      "pass_rate": 1.0,
+      "errors": 0,
+      "truncated": 0,
+      "evidence_total": 35,
+      "evidence_available": 34,
+      "latency_mean_seconds": 5.3614,
+      "latency_p50_seconds": 3.4009,
+      "latency_p95_seconds": 14.4955,
+      "completion_requests": 114,
+      "usage_missing_requests": 0,
+      "prompt_tokens": 220698,
+      "completion_tokens": 11686,
+      "total_tokens": 232384,
+      "tool_calls": 118,
+      "tool_calls_successful": 118,
+      "questions_using_tools": 40,
+      "categories": {
+        "cross_segment": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "fact": {
+          "total": 10,
+          "passed": 10,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        },
+        "metadata": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "quote": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "summary": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "timestamp": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "unanswerable": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 4,
+          "judge_unknown": 0
+        }
+      },
+      "budget_valid": 40,
+      "error_types": {},
+      "actual_models": [
+        "DeepSeek-V4.1-Flash"
+      ],
+      "tokens_per_question_known": 5809.6,
+      "tokens_per_rule_pass_known": 5809.6,
+      "judge": {
+        "passed": 37,
+        "total": 40,
+        "unknown": 0,
+        "status": {
+          "judged": 40
+        },
+        "known_outcomes": 40,
+        "pass_rate_lower_bound": 0.925,
+        "pass_rate_upper_bound": 0.925,
+        "rule_disagreements": [
+          "sqlite-04",
+          "https-03",
+          "session-08"
+        ],
+        "mean_scores": {
+          "correctness": 3.9,
+          "completeness": 3.95,
+          "grounding": 3.825
+        }
+      },
+      "videos": {
+        "fastapi": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        },
+        "https": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 7,
+          "judge_unknown": 0
+        },
+        "resume": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        },
+        "session": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 7,
+          "judge_unknown": 0
+        },
+        "sqlite": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 7,
+          "judge_unknown": 0
+        }
+      }
+    },
+    "full_context": {
+      "total": 40,
+      "passed": 38,
+      "pass_rate": 0.95,
+      "errors": 1,
+      "truncated": 0,
+      "evidence_total": 35,
+      "evidence_available": 35,
+      "latency_mean_seconds": 3.8972,
+      "latency_p50_seconds": 3.0161,
+      "latency_p95_seconds": 8.0958,
+      "completion_requests": 40,
+      "usage_missing_requests": 1,
+      "prompt_tokens": 1297101,
+      "completion_tokens": 9921,
+      "total_tokens": 1307022,
+      "tool_calls": 0,
+      "tool_calls_successful": 0,
+      "questions_using_tools": 0,
+      "categories": {
+        "cross_segment": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "fact": {
+          "total": 10,
+          "passed": 9,
+          "judge_passed": 7,
+          "judge_unknown": 0
+        },
+        "metadata": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "quote": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "summary": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 4,
+          "judge_unknown": 0
+        },
+        "timestamp": {
+          "total": 5,
+          "passed": 4,
+          "judge_passed": 4,
+          "judge_unknown": 0
+        },
+        "unanswerable": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        }
+      },
+      "budget_valid": 39,
+      "error_types": {
+        "RateLimitError": 1
+      },
+      "actual_models": [
+        "DeepSeek-V4.1-Flash"
+      ],
+      "tokens_per_question_known": 32675.55,
+      "tokens_per_rule_pass_known": 34395.32,
+      "judge": {
+        "passed": 35,
+        "total": 40,
+        "unknown": 0,
+        "status": {
+          "judged": 39,
+          "answer_invalid": 1
+        },
+        "known_outcomes": 40,
+        "pass_rate_lower_bound": 0.875,
+        "pass_rate_upper_bound": 0.875,
+        "rule_disagreements": [
+          "fastapi-02",
+          "resume-04",
+          "resume-03"
+        ],
+        "mean_scores": {
+          "correctness": 3.846,
+          "completeness": 3.949,
+          "grounding": 3.718
+        }
+      },
+      "videos": {
+        "fastapi": {
+          "total": 8,
+          "rule_passed": 7,
+          "judge_passed": 6,
+          "judge_unknown": 0
+        },
+        "https": {
+          "total": 8,
+          "rule_passed": 7,
+          "judge_passed": 7,
+          "judge_unknown": 0
+        },
+        "resume": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 6,
+          "judge_unknown": 0
+        },
+        "session": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        },
+        "sqlite": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        }
+      }
+    },
+    "rag": {
+      "total": 40,
+      "passed": 25,
+      "pass_rate": 0.625,
+      "errors": 1,
+      "truncated": 0,
+      "evidence_total": 35,
+      "evidence_available": 16,
+      "latency_mean_seconds": 2.9364,
+      "latency_p50_seconds": 1.9214,
+      "latency_p95_seconds": 7.2985,
+      "completion_requests": 40,
+      "usage_missing_requests": 1,
+      "prompt_tokens": 46672,
+      "completion_tokens": 7343,
+      "total_tokens": 54015,
+      "tool_calls": 0,
+      "tool_calls_successful": 0,
+      "questions_using_tools": 0,
+      "categories": {
+        "cross_segment": {
+          "total": 5,
+          "passed": 1,
+          "judge_passed": 0,
+          "judge_unknown": 0
+        },
+        "fact": {
+          "total": 10,
+          "passed": 6,
+          "judge_passed": 2,
+          "judge_unknown": 0
+        },
+        "metadata": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "quote": {
+          "total": 5,
+          "passed": 3,
+          "judge_passed": 1,
+          "judge_unknown": 0
+        },
+        "summary": {
+          "total": 5,
+          "passed": 3,
+          "judge_passed": 1,
+          "judge_unknown": 0
+        },
+        "timestamp": {
+          "total": 5,
+          "passed": 2,
+          "judge_passed": 2,
+          "judge_unknown": 0
+        },
+        "unanswerable": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 4,
+          "judge_unknown": 0
+        }
+      },
+      "budget_valid": 39,
+      "error_types": {
+        "RateLimitError": 1
+      },
+      "actual_models": [
+        "DeepSeek-V4.1-Flash"
+      ],
+      "tokens_per_question_known": 1350.38,
+      "tokens_per_rule_pass_known": 2160.6,
+      "judge": {
+        "passed": 15,
+        "total": 40,
+        "unknown": 0,
+        "status": {
+          "judged": 39,
+          "answer_invalid": 1
+        },
+        "known_outcomes": 40,
+        "pass_rate_lower_bound": 0.375,
+        "pass_rate_upper_bound": 0.375,
+        "rule_disagreements": [
+          "fastapi-03",
+          "fastapi-02",
+          "https-02",
+          "https-05",
+          "sqlite-04",
+          "session-07",
+          "resume-08",
+          "https-04",
+          "resume-05",
+          "https-03"
+        ],
+        "mean_scores": {
+          "correctness": 2.333,
+          "completeness": 2.513,
+          "grounding": 2.205
+        }
+      },
+      "videos": {
+        "fastapi": {
+          "total": 8,
+          "rule_passed": 5,
+          "judge_passed": 3,
+          "judge_unknown": 0
+        },
+        "https": {
+          "total": 8,
+          "rule_passed": 6,
+          "judge_passed": 2,
+          "judge_unknown": 0
+        },
+        "resume": {
+          "total": 8,
+          "rule_passed": 4,
+          "judge_passed": 2,
+          "judge_unknown": 0
+        },
+        "session": {
+          "total": 8,
+          "rule_passed": 5,
+          "judge_passed": 4,
+          "judge_unknown": 0
+        },
+        "sqlite": {
+          "total": 8,
+          "rule_passed": 5,
+          "judge_passed": 4,
+          "judge_unknown": 0
+        }
+      }
+    },
+    "rag_agent": {
+      "total": 40,
+      "passed": 40,
+      "pass_rate": 1.0,
+      "errors": 0,
+      "truncated": 0,
+      "evidence_total": 35,
+      "evidence_available": 34,
+      "latency_mean_seconds": 3.4826,
+      "latency_p50_seconds": 2.8408,
+      "latency_p95_seconds": 7.7255,
+      "completion_requests": 88,
+      "usage_missing_requests": 0,
+      "prompt_tokens": 215387,
+      "completion_tokens": 10712,
+      "total_tokens": 226099,
+      "tool_calls": 82,
+      "tool_calls_successful": 82,
+      "questions_using_tools": 29,
+      "categories": {
+        "cross_segment": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "fact": {
+          "total": 10,
+          "passed": 10,
+          "judge_passed": 9,
+          "judge_unknown": 0
+        },
+        "metadata": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "quote": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "summary": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "timestamp": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 5,
+          "judge_unknown": 0
+        },
+        "unanswerable": {
+          "total": 5,
+          "passed": 5,
+          "judge_passed": 4,
+          "judge_unknown": 0
+        }
+      },
+      "budget_valid": 40,
+      "error_types": {},
+      "actual_models": [
+        "DeepSeek-V4.1-Flash"
+      ],
+      "tokens_per_question_known": 5652.48,
+      "tokens_per_rule_pass_known": 5652.48,
+      "judge": {
+        "passed": 38,
+        "total": 40,
+        "unknown": 0,
+        "status": {
+          "judged": 40
+        },
+        "known_outcomes": 40,
+        "pass_rate_lower_bound": 0.95,
+        "pass_rate_upper_bound": 0.95,
+        "rule_disagreements": [
+          "fastapi-03",
+          "session-08"
+        ],
+        "mean_scores": {
+          "correctness": 3.95,
+          "completeness": 4,
+          "grounding": 3.775
+        }
+      },
+      "videos": {
+        "fastapi": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 7,
+          "judge_unknown": 0
+        },
+        "https": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        },
+        "resume": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        },
+        "session": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 7,
+          "judge_unknown": 0
+        },
+        "sqlite": {
+          "total": 8,
+          "rule_passed": 8,
+          "judge_passed": 8,
+          "judge_unknown": 0
+        }
+      }
+    }
+  },
+  "answer_usage": {
+    "prompt_tokens": 1779858,
+    "completion_tokens": 39662,
+    "total_tokens": 1819520,
+    "requests": 282,
+    "tool_calls": 200,
+    "usage_missing": 2
+  },
+  "judge_usage_by_architecture": {
+    "full_context": {
+      "prompt_tokens": 1315217,
+      "completion_tokens": 34454,
+      "total_tokens": 1349671,
+      "requests": 39,
+      "usage_missing": 0
+    },
+    "rag": {
+      "prompt_tokens": 1340199,
+      "completion_tokens": 35059,
+      "total_tokens": 1375258,
+      "requests": 39,
+      "usage_missing": 0
+    },
+    "agent_only": {
+      "prompt_tokens": 1376444,
+      "completion_tokens": 41765,
+      "total_tokens": 1418209,
+      "requests": 40,
+      "usage_missing": 0
+    },
+    "rag_agent": {
+      "prompt_tokens": 1375643,
+      "completion_tokens": 48279,
+      "total_tokens": 1423922,
+      "requests": 40,
+      "usage_missing": 0
+    }
+  },
+  "judge_usage": {
+    "prompt_tokens": 5407503,
+    "completion_tokens": 159557,
+    "total_tokens": 5567060,
+    "requests": 158,
+    "usage_missing": 0
+  },
+  "combined_total_tokens_known": 7386580,
+  "answer_errors": {
+    "RateLimitError": 2
+  },
+  "disagreements": [
+    {
+      "case_id": "fastapi-02",
+      "mode": "full_context",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [
+          "引用时间错误：该总结原话实际约在 06:18–06:24，不是 06:03。"
+        ],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "职责分工回答正确：FastAPI 定义接口、决定接口做什么；uvicorn 运行服务、接收并转交请求、让接口跑起来。引用原话基本准确，但附加的具体时间 @06:03 与转录不符，实际约 06:18–06:24。"
+      }
+    },
+    {
+      "case_id": "fastapi-02",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [
+          "时间标注错误：05:27 是笔记章节起点，不是实际区分职责原话的时间；相关原话约在 06:03–06:24，超出 2 秒容差。"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "职责区分本身正确：FastAPI 定义接口，uvicorn 运行服务、接收并转交请求，总结引文也基本对应。但主动标注的 05:27 不准确，实际职责分工与总结出现在约 06:03 之后，因此扣 grounding 与部分 correctness。"
+      }
+    },
+    {
+      "case_id": "fastapi-03",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [
+          "时间标注错误：33:27 是“依赖管理”章节起点，不是命令出现时间；转录中 pip freeze 写入 requirements.txt 约在 34:08–34:15。"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "命令和文件核心正确：材料支持用 pip freeze 将依赖记录到 requirements.txt。但回答附加的“约33:27”不准确，属于把章节起点当成具体命令时间，超出2秒容差。"
+      }
+    },
+    {
+      "case_id": "fastapi-03",
+      "mode": "rag_agent",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [
+          "时间归属不准确：33:27是章节起点，原话“就是用pip freeze重新生成一次”实际约在34:00（2040秒）出现。"
+        ],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "命令和文件正确：材料显示最后用 pip freeze 将依赖记录到 requirements.txt。但回答把引语定位在约33:27，实际该句在约34:00，时间归属有误。"
+      }
+    },
+    {
+      "case_id": "https-02",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 2,
+        "correctness": 2,
+        "critical_errors": [
+          "错误声称材料没有具体说明HTTPS证书解决什么问题；材料第6节明确讲证书用于身份认证，并支撑HTTPS加密、防篡改和安全通信。",
+          "将“A记录：域名→IPv4地址”等笔记概括当作原话并标为@20:49；该时间只是章节起点，具体原话出现在约22:15。"
+        ],
+        "grounding": 1,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "A记录部分正确，但证书作用被错误拒答，且具体原话的时间定位错误。"
+      }
+    },
+    {
+      "case_id": "https-03",
+      "mode": "agent_only",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 2,
+        "correctness": 2,
+        "critical_errors": [
+          "未回答A记录对应IPv4，反而称视频未直接说明、不能断言；与参考答案及笔记中A记录→IPv4不一致"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "AAAA记录对应IPv6正确，引用转录时间基本准确；但A记录只引“IP地址”并拒绝给出IPv4，遗漏问题一半核心事实，且与笔记/参考答案矛盾。"
+      }
+    },
+    {
+      "case_id": "https-03",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [
+          "将A/AAAA记录定义标注为“原片约20:49”不准确；原始转录中相关定义约在22:15–22:24，20:49是笔记章节起点/域名解析引入处。"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心答案正确：A记录对应IPv4，AAAA记录对应IPv6，材料笔记及转录均支持。但回答主动附加的“原片约20:49”时间定位错误，不能把笔记章节起点当作该句出现时间。"
+      }
+    },
+    {
+      "case_id": "https-04",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 3,
+        "correctness": 3,
+        "critical_errors": [],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心结论正确：下划线不是通配符，且不会匹配任何真实 Host/域名。引文基本对应原话，但回答给出的“约 1922s–1935s”未覆盖“永远都不会匹配到任何的域名”（约 1937.8s 起）；且“名字就是下划线本身”略弱于视频所说的“故意起的、不会和真实域名对上的名字/暂时没有名字”。"
+      }
+    },
+    {
+      "case_id": "https-05",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 2,
+        "correctness": 2,
+        "critical_errors": [
+          "错误声称转录只覆盖到2001s、2001s之后未提供；实际材料包含2001-2008及之后内容"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心纠正和引文正确：1999.8-2001.4有“它不是什么通配符”。但回答错误限制材料范围，并遗漏2001.4-2007.4的后续解释：“它就是一个故意起的/永远不会和任何的/真实域名对上的名字”。"
+      }
+    },
+    {
+      "case_id": "resume-03",
+      "mode": "full_context",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心结论正确：视频建议排名前20%以上就写，排名不好不主动暴露。但附加时间“约04:05”不准确；原始转录关键句“如果你排名前20%以上”约在250.64秒（04:10.6），04:05是笔记小节起点。"
+      }
+    },
+    {
+      "case_id": "resume-04",
+      "mode": "full_context",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [
+          "时间定位错误：原话约在 11:30.6（690.6 秒）处，不是 11:07；11:07 是笔记中该段落的起点。"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心答案正确：策略模式 + 工厂模式，用于解决多渠道支付适配。但回答主动给出的原话时间约 11:07 不符合原始转录，实际该句约在 11:30.6，因此时间引用不受支持。"
+      }
+    },
+    {
+      "case_id": "resume-05",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 3,
+        "correctness": 3,
+        "critical_errors": [
+          "错误声称转录只覆盖到238秒、239秒未包含；实际转录包含238.14-239.6“和在一起更紧凑”，且全片转录覆盖至1301.7秒"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心结论正确，引用了“可以合并成一个板块”“没有必要分成两个板块单独写”等原文；但错误判断转录覆盖范围，漏引238.14-239.6的“和在一起更紧凑”，时间/覆盖主张与材料不符。"
+      }
+    },
+    {
+      "case_id": "resume-08",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 3,
+        "correctness": 2,
+        "critical_errors": [
+          "回答称视频中没有提到“AI热点监控工具”，但材料明确提到该工具项目（如转录约 778–780 秒、917 秒起）。"
+        ],
+        "grounding": 1,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "“没有给出确切DAU”这一核心结论正确，但回答错误否认视频提到过“AI热点监控工具”，与材料直接矛盾。"
+      }
+    },
+    {
+      "case_id": "session-07",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心概括正确：服务端生成唯一且不可猜的 session_id，history 表新增 session_id TEXT，Cookie 传递；Cookie 会话不等于身份认证，换浏览器/清 Cookie/过期会丢，认证需注册登录、密码安全、找回密码、验证码等。主要问题是错误声称 1343–1374 秒完整转录未提供、2600–2634 秒仅有笔记，且称 1343–1374 秒只能到“改造请求处理逻辑”；实际转录包含这些区间及后续生成 ID、加字段、Cookie 传递等细节，属于证据陈述错误，但不影响主要结论。"
+      }
+    },
+    {
+      "case_id": "session-08",
+      "mode": "agent_only",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心结论正确：本节未实现登录接口，也未说明 bcrypt 的 cost 参数；所引“SSH登录”约717.6秒和“要搞注册登录”约2629.0秒均与转录相符。轻微不准确：候选称笔记正文“未出现……密码哈希相关内容”，但笔记在“会话的局限性”中确实提到真正身份认证需“密码安全（哈希、盐值）”，只是未涉及 bcrypt 或本节实现。"
+      }
+    },
+    {
+      "case_id": "session-08",
+      "mode": "rag_agent",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [
+          "将“那个呢有机会我们后面讲”定位在约43:38不准确；原始转录该句 start=2636.4s（约43:56），且该句属于转录而非笔记。"
+        ],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心结论正确：材料没有 bcrypt/cost 内容，本节也未实现登录接口或说明 cost 参数。但回答主动附加的时间引用错误，且引文归属表述不够准确。"
+      }
+    },
+    {
+      "case_id": "sqlite-04",
+      "mode": "agent_only",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 4,
+        "correctness": 3,
+        "critical_errors": [],
+        "grounding": 3,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "核心结论正确，引文与材料相符；但主动标注的“34:12”与括号内 2072–2080 秒不一致：34:12 实为 2052 秒，引文实际约 2072–2080 秒（34:32–34:40），属时间标注小错。"
+      }
+    },
+    {
+      "case_id": "sqlite-04",
+      "mode": "rag",
+      "rule_passed": true,
+      "judge_passed": false,
+      "judgment": {
+        "completeness": 2,
+        "correctness": 1,
+        "critical_errors": [
+          "材料在约2074秒处明确说“这一节从头到尾我们没有打开任何一个前端文件，更没有改过前端的代码”，候选回答却称“是否打开过前端文件，材料未提及，无法确认”，与原文直接矛盾。"
+        ],
+        "grounding": 2,
+        "insufficient_evidence": false,
+        "passed": false,
+        "reason": "候选正确指出没有修改前端文件，但错误否认材料能确认“没有打开过前端文件”。原文明确说本节从头到尾没有打开任何一个前端文件，也没有改前端代码；候选遗漏该直接证据并作出相反判断。"
+      }
+    }
+  ],
+  "source_files": {
+    "summary.json": {
+      "sha256": "689f004e885fd6cac04c5a605e3f768bc4a1253f2e41af0155f5548e382d78a1"
+    },
+    "answers.jsonl": {
+      "sha256": "62d8957c1ce42d81235567b4d37326571bd95cd2b0b8a207097841dc80dc5f7a"
+    }
+  },
+  "filtered_answers_sha256": "ba7009dcfed9560ad1043d3e0c468daaba071f237f92a8f6351cd740bc06904b",
+  "note": "Derived standard-only export from the completed experiment; no model requests were rerun. Tokens with missing usage are unknown, not zero."
+}

@@ -684,6 +684,7 @@ Copyright (c) 2024 Jeffery Huang
 - [任务调度说明](backend/TASK_SCHEDULING.md)：多用户部署的并发、排队、取消和中断恢复规则。默认全站执行 6 个、每用户执行 1 个；GPU 推理 1 个、CPU 密集阶段 2 个、模型总结请求 2 个。
 - [并发压测记录及参数选择依据](backend/CONCURRENCY_BENCHMARK.md)：参数选择依据、GPU 并发 1/2/3/4 对比、显存驻留实验和复现命令。
 - [Agent 问答评测](backend/benchmark_records/2026-11-05-agent-eval/REPORT.md)：5 段视频、40 题的 RAG / Agent 对照、工具调用预算修复、逐题记录与指标口径；复现方式见 [评测说明](backend/AGENT_EVALUATION.md)。
+- [四组架构 Standard 评测报告](backend/benchmark_records/2026-11-10-tongji-architecture-eval/STANDARD_EVALUATION_REPORT.md)：全材料、RAG、纯 Agent、RAG + Agent 的结果与 Token 消耗，含题目、规则评审和同模型自评方法；复现方式见 [评测协议](backend/ARCHITECTURE_EVALUATION.md)。
 - [管理员后台核心需求](docs/管理员后台需求文档.md)：总览、任务监控、资源与用户管理的范围及口径。
 - [管理员后台验证记录](docs/管理员后台验证记录.md)：真实数据来源、权限与任务操作回归、浏览器联调及验证边界。
 - [OCR 实现与配置说明](backend/OCR.md)：字幕提取流程、设备选择与运行参数。

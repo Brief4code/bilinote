@@ -1,0 +1,1191 @@
+{
+  "metadata": {
+    "protocol_version": "architectures-v2.1",
+    "started_at": "2026-11-10T16:39:11.613762+08:00",
+    "dataset_sha256": "d3669e546d0a93f9e4389fc7bf18f61e5d45a01e3eeddf3282c2cc0d500e76db",
+    "manifest_sha256": "d9a207c231db6a9fb5c1d2456b81537b7cd6eaae86e8768faaca9566304e8de6",
+    "runner_sha256": "24d55ff0fb901138b550338daaece58924ce9c928c9683aff44ef1620558c102",
+    "rule_scorer_sha256": "8be21275fd3147f357f1a42bf041876393666a7614df0ff9361fcc1fc141ba22",
+    "model_requested": "DeepSeek-V4.1-Flash",
+    "provider_id": "cline:agi.tongji.edu.cn",
+    "provider_source": "cline",
+    "api_base_url": "https://agi.tongji.edu.cn/v1",
+    "temperature": 0,
+    "modes": [
+      "full_context",
+      "rag",
+      "agent_only",
+      "rag_agent"
+    ],
+    "budgets": {
+      "tight": {
+        "total_tokens": 16384,
+        "output_tokens": 2048,
+        "per_call_tokens": 1024,
+        "model_calls": 4,
+        "tool_calls": 9,
+        "tool_rounds": 3,
+        "seconds": 90
+      },
+      "standard": {
+        "total_tokens": 65536,
+        "output_tokens": 8192,
+        "per_call_tokens": 4096,
+        "model_calls": 4,
+        "tool_calls": 9,
+        "tool_rounds": 3,
+        "seconds": 180
+      }
+    },
+    "repeats": 1,
+    "workers": 2,
+    "case_ids": [
+      "resume-01",
+      "resume-02",
+      "resume-03",
+      "resume-04",
+      "resume-05",
+      "resume-06",
+      "resume-07",
+      "resume-08",
+      "fastapi-01",
+      "fastapi-02",
+      "fastapi-03",
+      "fastapi-04",
+      "fastapi-05",
+      "fastapi-06",
+      "fastapi-07",
+      "fastapi-08",
+      "sqlite-01",
+      "sqlite-02",
+      "sqlite-03",
+      "sqlite-04",
+      "sqlite-05",
+      "sqlite-06",
+      "sqlite-07",
+      "sqlite-08",
+      "session-01",
+      "session-02",
+      "session-03",
+      "session-04",
+      "session-05",
+      "session-06",
+      "session-07",
+      "session-08",
+      "https-01",
+      "https-02",
+      "https-03",
+      "https-04",
+      "https-05",
+      "https-06",
+      "https-07",
+      "https-08"
+    ],
+    "diagnostic": false,
+    "sample_order_seed": 20261110,
+    "common_prompt_sha256": "2d5f54af35008d1fb5c976454c2bd103e8d50d94321ffe1632597498bbbddad7",
+    "budget_enforcement": "calls/tools/output enforced before request; total tokens certified after usage; overrun fails",
+    "full_context_policy": "complete frozen note and transcript; never truncated",
+    "orchestration": "evaluation-only common loop, real production vector query and tools",
+    "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]",
+    "warm_index": true,
+    "empty_history": true,
+    "pricing": null,
+    "chat_tools_sha256": "390d3a77e2537e03708d1573bd4595c611d0c1af681c71e0246f4e5fb64ad8c0",
+    "vector_store_sha256": "e3024b0611e8dd7ccb51f637a7350985c82b233f5ab8de2cfa187353d8bf04c6"
+  },
+  "budgets": {
+    "tight": {
+      "agent_only": {
+        "total": 40,
+        "passed": 36,
+        "pass_rate": 0.9,
+        "errors": 3,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 34,
+        "latency_mean_seconds": 6.8168,
+        "latency_p50_seconds": 3.6484,
+        "latency_p95_seconds": 30.0177,
+        "completion_requests": 118,
+        "usage_missing_requests": 0,
+        "prompt_tokens": 237455,
+        "completion_tokens": 12942,
+        "total_tokens": 250397,
+        "tool_calls": 127,
+        "tool_calls_successful": 127,
+        "questions_using_tools": 40,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 9,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 3,
+            "judge_passed": 3,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 4,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 37,
+        "error_types": {
+          "BudgetExceeded": 3
+        },
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 6259.93,
+        "tokens_per_rule_pass_known": 6955.47,
+        "judge": {
+          "passed": 35,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "judged": 37,
+            "answer_invalid": 3
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.875,
+          "pass_rate_upper_bound": 0.875,
+          "rule_disagreements": [
+            "https-06",
+            "https-03",
+            "resume-08"
+          ],
+          "mean_scores": {
+            "correctness": 3.919,
+            "completeness": 3.946,
+            "grounding": 3.757
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 7,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 6,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 7,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          }
+        }
+      },
+      "full_context": {
+        "total": 40,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "errors": 40,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 35,
+        "latency_mean_seconds": 3.6992,
+        "latency_p50_seconds": 2.464,
+        "latency_p95_seconds": 8.7292,
+        "completion_requests": 40,
+        "usage_missing_requests": 0,
+        "prompt_tokens": 1355911,
+        "completion_tokens": 10374,
+        "total_tokens": 1366285,
+        "tool_calls": 0,
+        "tool_calls_successful": 0,
+        "questions_using_tools": 0,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 0,
+        "error_types": {
+          "BudgetExceeded": 40
+        },
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 34157.12,
+        "tokens_per_rule_pass_known": null,
+        "judge": {
+          "passed": 0,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "answer_invalid": 40
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.0,
+          "pass_rate_upper_bound": 0.0,
+          "rule_disagreements": [],
+          "mean_scores": {
+            "correctness": null,
+            "completeness": null,
+            "grounding": null
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 0,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          }
+        }
+      },
+      "rag": {
+        "total": 40,
+        "passed": 25,
+        "pass_rate": 0.625,
+        "errors": 2,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 16,
+        "latency_mean_seconds": 2.7927,
+        "latency_p50_seconds": 1.6392,
+        "latency_p95_seconds": 8.1405,
+        "completion_requests": 40,
+        "usage_missing_requests": 2,
+        "prompt_tokens": 45425,
+        "completion_tokens": 7069,
+        "total_tokens": 52494,
+        "tool_calls": 0,
+        "tool_calls_successful": 0,
+        "questions_using_tools": 0,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 1,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 6,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 3,
+            "judge_passed": 1,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 3,
+            "judge_passed": 1,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 2,
+            "judge_passed": 2,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 38,
+        "error_types": {
+          "RateLimitError": 2
+        },
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 1312.35,
+        "tokens_per_rule_pass_known": 2099.76,
+        "judge": {
+          "passed": 17,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "judged": 38,
+            "answer_invalid": 2
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.425,
+          "pass_rate_upper_bound": 0.425,
+          "rule_disagreements": [
+            "resume-08",
+            "https-02",
+            "fastapi-03",
+            "fastapi-02",
+            "resume-05",
+            "https-05",
+            "session-07",
+            "sqlite-04"
+          ],
+          "mean_scores": {
+            "correctness": 2.526,
+            "completeness": 2.658,
+            "grounding": 2.421
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 5,
+            "judge_passed": 3,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 6,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 4,
+            "judge_passed": 2,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          }
+        }
+      },
+      "rag_agent": {
+        "total": 40,
+        "passed": 39,
+        "pass_rate": 0.975,
+        "errors": 1,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 34,
+        "latency_mean_seconds": 5.1056,
+        "latency_p50_seconds": 2.6009,
+        "latency_p95_seconds": 8.5421,
+        "completion_requests": 82,
+        "usage_missing_requests": 1,
+        "prompt_tokens": 184628,
+        "completion_tokens": 10494,
+        "total_tokens": 195122,
+        "tool_calls": 75,
+        "tool_calls_successful": 75,
+        "questions_using_tools": 26,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 4,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 10,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 39,
+        "error_types": {
+          "RateLimitError": 1
+        },
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 4878.05,
+        "tokens_per_rule_pass_known": 5003.13,
+        "judge": {
+          "passed": 36,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "judged": 39,
+            "answer_invalid": 1
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.9,
+          "pass_rate_upper_bound": 0.9,
+          "rule_disagreements": [
+            "https-03",
+            "session-03",
+            "resume-08"
+          ],
+          "mean_scores": {
+            "correctness": 3.949,
+            "completeness": 4,
+            "grounding": 3.641
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 7,
+            "judge_passed": 6,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          }
+        }
+      }
+    },
+    "standard": {
+      "agent_only": {
+        "total": 40,
+        "passed": 40,
+        "pass_rate": 1.0,
+        "errors": 0,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 34,
+        "latency_mean_seconds": 5.3614,
+        "latency_p50_seconds": 3.4009,
+        "latency_p95_seconds": 14.4955,
+        "completion_requests": 114,
+        "usage_missing_requests": 0,
+        "prompt_tokens": 220698,
+        "completion_tokens": 11686,
+        "total_tokens": 232384,
+        "tool_calls": 118,
+        "tool_calls_successful": 118,
+        "questions_using_tools": 40,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 10,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 40,
+        "error_types": {},
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 5809.6,
+        "tokens_per_rule_pass_known": 5809.6,
+        "judge": {
+          "passed": 37,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "judged": 40
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.925,
+          "pass_rate_upper_bound": 0.925,
+          "rule_disagreements": [
+            "sqlite-04",
+            "https-03",
+            "session-08"
+          ],
+          "mean_scores": {
+            "correctness": 3.9,
+            "completeness": 3.95,
+            "grounding": 3.825
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          }
+        }
+      },
+      "full_context": {
+        "total": 40,
+        "passed": 38,
+        "pass_rate": 0.95,
+        "errors": 1,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 35,
+        "latency_mean_seconds": 3.8972,
+        "latency_p50_seconds": 3.0161,
+        "latency_p95_seconds": 8.0958,
+        "completion_requests": 40,
+        "usage_missing_requests": 1,
+        "prompt_tokens": 1297101,
+        "completion_tokens": 9921,
+        "total_tokens": 1307022,
+        "tool_calls": 0,
+        "tool_calls_successful": 0,
+        "questions_using_tools": 0,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 9,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 4,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 39,
+        "error_types": {
+          "RateLimitError": 1
+        },
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 32675.55,
+        "tokens_per_rule_pass_known": 34395.32,
+        "judge": {
+          "passed": 35,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "judged": 39,
+            "answer_invalid": 1
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.875,
+          "pass_rate_upper_bound": 0.875,
+          "rule_disagreements": [
+            "fastapi-02",
+            "resume-04",
+            "resume-03"
+          ],
+          "mean_scores": {
+            "correctness": 3.846,
+            "completeness": 3.949,
+            "grounding": 3.718
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 7,
+            "judge_passed": 6,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 7,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 6,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          }
+        }
+      },
+      "rag": {
+        "total": 40,
+        "passed": 25,
+        "pass_rate": 0.625,
+        "errors": 1,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 16,
+        "latency_mean_seconds": 2.9364,
+        "latency_p50_seconds": 1.9214,
+        "latency_p95_seconds": 7.2985,
+        "completion_requests": 40,
+        "usage_missing_requests": 1,
+        "prompt_tokens": 46672,
+        "completion_tokens": 7343,
+        "total_tokens": 54015,
+        "tool_calls": 0,
+        "tool_calls_successful": 0,
+        "questions_using_tools": 0,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 1,
+            "judge_passed": 0,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 6,
+            "judge_passed": 2,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 3,
+            "judge_passed": 1,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 3,
+            "judge_passed": 1,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 2,
+            "judge_passed": 2,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 39,
+        "error_types": {
+          "RateLimitError": 1
+        },
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 1350.38,
+        "tokens_per_rule_pass_known": 2160.6,
+        "judge": {
+          "passed": 15,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "judged": 39,
+            "answer_invalid": 1
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.375,
+          "pass_rate_upper_bound": 0.375,
+          "rule_disagreements": [
+            "fastapi-03",
+            "fastapi-02",
+            "https-02",
+            "https-05",
+            "sqlite-04",
+            "session-07",
+            "resume-08",
+            "https-04",
+            "resume-05",
+            "https-03"
+          ],
+          "mean_scores": {
+            "correctness": 2.333,
+            "completeness": 2.513,
+            "grounding": 2.205
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 5,
+            "judge_passed": 3,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 6,
+            "judge_passed": 2,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 4,
+            "judge_passed": 2,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          }
+        }
+      },
+      "rag_agent": {
+        "total": 40,
+        "passed": 40,
+        "pass_rate": 1.0,
+        "errors": 0,
+        "truncated": 0,
+        "evidence_total": 35,
+        "evidence_available": 34,
+        "latency_mean_seconds": 3.4826,
+        "latency_p50_seconds": 2.8408,
+        "latency_p95_seconds": 7.7255,
+        "completion_requests": 88,
+        "usage_missing_requests": 0,
+        "prompt_tokens": 215387,
+        "completion_tokens": 10712,
+        "total_tokens": 226099,
+        "tool_calls": 82,
+        "tool_calls_successful": 82,
+        "questions_using_tools": 29,
+        "categories": {
+          "cross_segment": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "fact": {
+            "total": 10,
+            "passed": 10,
+            "judge_passed": 9,
+            "judge_unknown": 0
+          },
+          "metadata": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "quote": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "summary": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "timestamp": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 5,
+            "judge_unknown": 0
+          },
+          "unanswerable": {
+            "total": 5,
+            "passed": 5,
+            "judge_passed": 4,
+            "judge_unknown": 0
+          }
+        },
+        "budget_valid": 40,
+        "error_types": {},
+        "actual_models": [
+          "DeepSeek-V4.1-Flash"
+        ],
+        "tokens_per_question_known": 5652.48,
+        "tokens_per_rule_pass_known": 5652.48,
+        "judge": {
+          "passed": 38,
+          "total": 40,
+          "unknown": 0,
+          "status": {
+            "judged": 40
+          },
+          "known_outcomes": 40,
+          "pass_rate_lower_bound": 0.95,
+          "pass_rate_upper_bound": 0.95,
+          "rule_disagreements": [
+            "fastapi-03",
+            "session-08"
+          ],
+          "mean_scores": {
+            "correctness": 3.95,
+            "completeness": 4,
+            "grounding": 3.775
+          }
+        },
+        "videos": {
+          "fastapi": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "https": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "resume": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          },
+          "session": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 7,
+            "judge_unknown": 0
+          },
+          "sqlite": {
+            "total": 8,
+            "rule_passed": 8,
+            "judge_passed": 8,
+            "judge_unknown": 0
+          }
+        }
+      }
+    }
+  },
+  "paired_rule_changes": {
+    "tight": {
+      "agent_only": {
+        "pairs": 40,
+        "agent_only_pass": 14,
+        "rag_only_pass": 3
+      },
+      "full_context": {
+        "pairs": 40,
+        "agent_only_pass": 0,
+        "rag_only_pass": 25
+      },
+      "rag_agent": {
+        "pairs": 40,
+        "agent_only_pass": 14,
+        "rag_only_pass": 0
+      }
+    },
+    "standard": {
+      "agent_only": {
+        "pairs": 40,
+        "agent_only_pass": 15,
+        "rag_only_pass": 0
+      },
+      "full_context": {
+        "pairs": 40,
+        "agent_only_pass": 14,
+        "rag_only_pass": 1
+      },
+      "rag_agent": {
+        "pairs": 40,
+        "agent_only_pass": 15,
+        "rag_only_pass": 0
+      }
+    }
+  },
+  "judge_calibration": "Not human-calibrated; model judgments are secondary, not ground truth",
+  "judge_accounting": {
+    "requests": 272,
+    "usage_missing": 0,
+    "total_tokens_known": 9580943,
+    "elapsed_seconds_sum": 3434.3816,
+    "actual_models": [
+      "DeepSeek-V4.1-Flash"
+    ]
+  },
+  "results_sha256": "f6737195320300397a7bde35a8da16c4fd1436873cfc8332cab1f0506daa417d",
+  "judge_metadata": {
+    "started_at": "2026-11-10T16:51:38.613183+08:00",
+    "results_sha256": "f6737195320300397a7bde35a8da16c4fd1436873cfc8332cab1f0506daa417d",
+    "answer_metadata_sha256": "c8976bf2333943b7ac185472f7062f8ae5fae93825a94f725e43962d49332134",
+    "dataset_sha256": "d3669e546d0a93f9e4389fc7bf18f61e5d45a01e3eeddf3282c2cc0d500e76db",
+    "manifest_sha256": "d9a207c231db6a9fb5c1d2456b81537b7cd6eaae86e8768faaca9566304e8de6",
+    "judge_script_sha256": "bfc6742fd52b8e1e34a1cb0a77cb4080ecdcdf28b260d87710464324e4b44b02",
+    "prompt_sha256": "fcaed7ff1edd56b2f5437bbdd4ee479d0bf4ee45e3ed5d5222922e7c7c24dfab",
+    "model_requested": "DeepSeek-V4.1-Flash",
+    "provider_id": "cline:agi.tongji.edu.cn",
+    "provider_source": "cline",
+    "api_base_url": "https://agi.tongji.edu.cn/v1",
+    "judge_relationship": "same_model_self_evaluation",
+    "temperature": 0,
+    "max_tokens": 8192,
+    "timeout": 180,
+    "full_evidence": true,
+    "architecture_blind": true,
+    "calibrated_against_humans": false,
+    "scoring": "correctness=4, completeness>=3, grounding>=3, no critical error; uncertainty is unknown",
+    "cost_scope": "judge usage is separate from answering budgets",
+    "complete": true,
+    "following": false
+  },
+  "partial_judge": false
+}

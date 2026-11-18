@@ -1,0 +1,91 @@
+{
+  "tested_at": "2026-11-10T16:35:14.206966+08:00",
+  "base_url": "https://agi.tongji.edu.cn/v1",
+  "model_requested": "DeepSeek-V4.1-Flash",
+  "payload_scope": "synthetic ping and synthetic tool result only; no video materials",
+  "sdk_retries": 0,
+  "checks": [
+    {
+      "check": "plain_completion",
+      "model_returned": "DeepSeek-V4.1-Flash",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 38,
+        "total_tokens": 56,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 10,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        }
+      },
+      "answer": "TONGJI_PING_OK",
+      "tool_names": [],
+      "elapsed_seconds": 0.5394,
+      "passed": true
+    },
+    {
+      "check": "native_tool_call",
+      "model_returned": "DeepSeek-V4.1-Flash",
+      "finish_reason": "tool_calls",
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 309,
+        "total_tokens": 334,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        }
+      },
+      "answer": "",
+      "tool_names": [
+        "get_probe_value"
+      ],
+      "elapsed_seconds": 0.529,
+      "passed": true
+    },
+    {
+      "check": "tool_result_and_tool_choice_none",
+      "model_returned": "DeepSeek-V4.1-Flash",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 359,
+        "total_tokens": 370,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        }
+      },
+      "answer": "TONGJI_TOOL_OK_82741",
+      "tool_names": [],
+      "elapsed_seconds": 0.4163,
+      "passed": true
+    }
+  ],
+  "compatible_with_evaluation_protocol": true,
+  "known_total_tokens": 760
+}

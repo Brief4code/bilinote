@@ -1,0 +1,150 @@
+{
+  "review_date": "2026-11-10",
+  "method": "Offline constructed-answer probes against the unchanged v1.1 scorer; these are not real model responses or a new accuracy estimate.",
+  "inputs": {
+    "backend/scripts/evaluate_agent.py": "8be21275fd3147f357f1a42bf041876393666a7614df0ff9361fcc1fc141ba22",
+    "backend/evals/agent_qa_v1_1.json": "d3669e546d0a93f9e4389fc7bf18f61e5d45a01e3eeddf3282c2cc0d500e76db",
+    "backend/benchmark_records/2026-11-05-agent-eval/answers.jsonl": "314f8d3725ae7e5904799948baf4fc507ed52e8569d0be1d498721192c18e4f1"
+  },
+  "probes": [
+    {
+      "case_id": "https-03",
+      "question": "视频讲到的DNS A记录和AAAA记录分别对应哪种IP地址？",
+      "reference_answer": "A对应IPv4，AAAA对应IPv6。",
+      "constructed_answer": "A 记录对应 IPv6，AAAA 记录对应 IPv4。",
+      "known_error": "实体与属性的对应关系颠倒",
+      "expected_passed": false,
+      "observed_score": {
+        "passed": true,
+        "fact_groups": [
+          true,
+          true
+        ],
+        "time_checks": [],
+        "forbidden_matches": [],
+        "evidence_checks": [
+          false,
+          false
+        ],
+        "evidence_available": false
+      }
+    },
+    {
+      "case_id": "fastapi-05",
+      "question": "请查询1196到1210秒的原始转录，老师在交互式文档里先后点击的两个按钮是什么？按顺序列出。",
+      "reference_answer": "先Try it out，再Execute。",
+      "constructed_answer": "先 Execute，再 Try it out。",
+      "known_error": "按钮顺序颠倒",
+      "expected_passed": false,
+      "observed_score": {
+        "passed": true,
+        "fact_groups": [
+          true,
+          true
+        ],
+        "time_checks": [],
+        "forbidden_matches": [],
+        "evidence_checks": [
+          false,
+          false
+        ],
+        "evidence_available": false
+      }
+    },
+    {
+      "case_id": "resume-04",
+      "question": "视频举的支付中心例子，用哪两种设计模式解决多渠道支付适配？",
+      "reference_answer": "策略模式和工厂模式。",
+      "constructed_answer": "视频没有使用策略模式，也没有使用工厂模式。",
+      "known_error": "否定参考答案",
+      "expected_passed": false,
+      "observed_score": {
+        "passed": true,
+        "fact_groups": [
+          true,
+          true
+        ],
+        "time_checks": [],
+        "forbidden_matches": [],
+        "evidence_checks": [
+          false
+        ],
+        "evidence_available": false
+      }
+    },
+    {
+      "case_id": "resume-06",
+      "question": "请定位原文“项目中90%以上的代码”这句话，给出其开始时间，精确到秒。",
+      "reference_answer": "921.92秒，约15:22。",
+      "constructed_answer": "原话实际出现在 00:01；15:22 是错误定位，不应该使用。",
+      "known_error": "将正确时间作为被否定的候选项",
+      "expected_passed": false,
+      "observed_score": {
+        "passed": true,
+        "fact_groups": [
+          true
+        ],
+        "time_checks": [
+          true
+        ],
+        "forbidden_matches": [],
+        "evidence_checks": [
+          false
+        ],
+        "evidence_available": false
+      }
+    },
+    {
+      "case_id": "fastapi-08",
+      "question": "这段课程实测的FastAPI接口在1000并发下P99延迟是多少毫秒？仅依据视频，没有就明确说明。",
+      "reference_answer": "视频没有提供该并发条件下的P99实测数据。",
+      "constructed_answer": "视频未提供 P99 的实测数据。不过在1000并发下，接口延迟为30毫秒。",
+      "known_error": "拒答后附加无依据数值",
+      "expected_passed": false,
+      "observed_score": {
+        "passed": true,
+        "fact_groups": [
+          true
+        ],
+        "time_checks": [],
+        "forbidden_matches": [],
+        "evidence_checks": [],
+        "evidence_available": null
+      }
+    },
+    {
+      "case_id": "https-06",
+      "question": "请定位原文“它不是什么通配符”，给出这句话的开始时间，精确到秒。",
+      "reference_answer": "1999.8秒，约33:20。",
+      "constructed_answer": "时间不是33:20，应该是00:01。",
+      "known_error": "否定正确时间并主张错误时间",
+      "expected_passed": false,
+      "observed_score": {
+        "passed": true,
+        "fact_groups": [
+          true
+        ],
+        "time_checks": [
+          true
+        ],
+        "forbidden_matches": [],
+        "evidence_checks": [
+          false
+        ],
+        "evidence_available": false
+      }
+    }
+  ],
+  "negation_prefix_probe": {
+    "prefix": "下列说法全部错误：",
+    "original_passing_answers": 37,
+    "still_passed": 37
+  },
+  "archived_fixed_agent_accounting": {
+    "tool_calls": 87,
+    "known_total_tokens": 247954,
+    "unanswerable_questions": 5,
+    "unanswerable_tool_calls": 38,
+    "unanswerable_known_total_tokens": 68095
+  }
+}
