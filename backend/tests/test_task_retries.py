@@ -1,7 +1,9 @@
 """Exercise the worker and model retry budgets together without real API calls."""
 import json
 import os
+import sys
 import tempfile
+import types
 import unittest
 import uuid
 from pathlib import Path
@@ -19,7 +21,6 @@ from app.db.models.task_jobs import TaskJob
 from app.db.models.users import User
 from app.db.models.video_tasks import VideoTask
 from app.gpt.universal_gpt import UniversalGPT
-from app.routers import note
 from app.services import task_context, task_worker
 
 
@@ -71,14 +72,20 @@ class TaskRetryTests(unittest.TestCase):
                            phase='SUMMARIZING', attempt_token='token', attempts=1))
         self.gpt._do_create.side_effect = outcomes
         run = Mock(side_effect=lambda *args, **kwargs: self.gpt._chat_completion_create(self.messages))
-        with patch.dict(os.environ, {'TASK_JOB_ID': task_id, 'TASK_ATTEMPT_TOKEN': 'token',
+        # The worker imports the router lazily; stub it so the retry budget can be
+        # exercised without the ASR/export dependencies CI intentionally omits.
+        router = types.ModuleType('app.routers.note')
+        router.run_note_task = run
+        router._persist_prefetched_transcript = Mock()
+        router.NOTE_OUTPUT_DIR = str(Path(temporary.name) / 'notes')
+        with patch.dict(sys.modules, {'app.routers.note': router}), \
+             patch.dict(os.environ, {'TASK_JOB_ID': task_id, 'TASK_ATTEMPT_TOKEN': 'token',
                                      'TASK_PARENT_PID': '1', 'TASK_RETRY_ATTEMPTS': '2'}), \
              patch.object(db_module, 'SessionLocal', sessions), \
              patch.object(task_worker, 'watch_parent'), \
              patch.object(task_worker.threading, 'Thread'), \
              patch.object(task_worker.threading, 'Event', return_value=Mock()), \
-             patch.object(task_context, 'retry_wait'), \
-             patch.object(note, 'run_note_task', run):
+             patch.object(task_context, 'retry_wait'):
             try:
                 task_worker.execute()
             except APITimeoutError:

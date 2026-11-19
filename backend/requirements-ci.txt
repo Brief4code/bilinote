@@ -6,6 +6,7 @@ fastapi
 httpx
 SQLAlchemy
 python-dotenv
+openai
 numpy
 rapidocr
 onnxruntime
